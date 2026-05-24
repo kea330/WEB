@@ -9,7 +9,18 @@ ob_start();
 <?php else: ?>
     <?php foreach ($posts as $post): ?>
         <div class="card">
-            <h2><a href="<?= ($base ?? '') ?>/posts/<?= (int) $post['id'] ?>"><?= htmlspecialchars($post['title']) ?></a></h2>
+            <div class="card-header">
+                <h2><a href="<?= ($base ?? '') ?>/posts/<?= (int) $post['id'] ?>"><?= htmlspecialchars($post['title']) ?></a></h2>
+                <div class="menu-container">
+                    <button class="menu-btn" onclick="toggleMenu(<?= (int) $post['id'] ?>)">•••</button>
+                    <div id="menu-<?= (int) $post['id'] ?>" class="menu-dropdown">
+                        <a href="<?= ($base ?? '') ?>/posts/<?= (int) $post['id'] ?>/edit">Edit</a>
+                        <form action="<?= ($base ?? '') ?>/posts/<?= (int) $post['id'] ?>/delete" method="POST" onsubmit="return confirm('Are you sure you want to delete this post?');">
+                            <button type="submit" class="menu-delete">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
             <p><?= htmlspecialchars(mb_strimwidth($post['body'], 0, 120, '...')) ?></p>
             <small><?= htmlspecialchars($post['created_at'] ?? '') ?></small>
         </div>
