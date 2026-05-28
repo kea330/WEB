@@ -8,7 +8,7 @@
         * { box-sizing: border-box; }
         body { font-family: system-ui, sans-serif; max-width: 720px; margin: 0 auto; padding: 1.5rem; background: #f5f5f5; color: #222; }
         nav { margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid #333; }
-        nav a { margin-right: 1rem; color: #0066cc; text-decoration: none; }
+        nav a { margin-right: 1rem; color: #070707; text-decoration: none; }
         nav a:hover { text-decoration: underline; }
         .card { background: #fff; padding: 1rem; margin-bottom: 1rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
         .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; }
